@@ -81,7 +81,7 @@ export function RestTimer() {
       <motion.button
         whileTap={{ scale: 0.92 }}
         onClick={() => setOpen((o) => !o)}
-        className="fixed right-4 z-[11] flex h-[54px] w-[54px] items-center justify-center rounded-full text-[22px] shadow-[0_8px_20px_rgba(255,106,61,.35)]"
+        className="fixed right-4 z-[11] flex h-[54px] w-[54px] items-center justify-center rounded-full text-[22px] shadow-[0_8px_20px_var(--accent-shadow)]"
         style={{ bottom: 'calc(var(--tabbar-h) + 12px)', background: 'var(--accent)', color: '#1a0f08' }}
         aria-label="Rest timer"
       >

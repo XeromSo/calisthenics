@@ -1,6 +1,6 @@
 import type { DayProgram } from '../types'
 
-export const DAYS: DayProgram[] = [
+export const SINA_DAYS: DayProgram[] = [
   {
     key: 'sat',
     short: 'Sat',

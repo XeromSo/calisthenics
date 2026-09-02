@@ -32,3 +32,31 @@ export interface ParsedSets {
   sets: number
   rest: string
 }
+
+export type UserKey = 'sina' | 'pepe'
+
+export interface SkillProgression {
+  name: string
+  steps: string[]
+}
+
+export interface InfoContent {
+  focusTag: string
+  skillProgressions: SkillProgression[]
+  importantRules: string[]
+  progressionRule: string
+  closingQuote: string
+  closingQuoteDir?: 'rtl' | 'ltr'
+}
+
+export interface Profile {
+  key: UserKey
+  name: string
+  emoji: string
+  tagline: string
+  accent: string
+  good: string
+  headerTitle: string
+  days: DayProgram[]
+  info: InfoContent
+}

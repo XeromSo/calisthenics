@@ -18,7 +18,11 @@ export function RestDayView({ day }: { day: DayProgram }) {
       </ul>
       <div
         className="mt-3.5 rounded-xl border px-3.5 py-3 text-[13px]"
-        style={{ borderColor: 'rgba(255,106,61,.35)', background: 'rgba(255,106,61,.08)', color: '#ffb199' }}
+        style={{
+          borderColor: 'color-mix(in srgb, var(--accent) 45%, transparent)',
+          background: 'color-mix(in srgb, var(--accent) 10%, transparent)',
+          color: 'color-mix(in srgb, var(--accent) 60%, white)',
+        }}
       >
         ⚠️ {day.rest.warning}
       </div>
