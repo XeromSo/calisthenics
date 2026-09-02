@@ -24,7 +24,7 @@ export function SectionBlock({ section, sectionIdx, isChecked, onToggle }: Secti
         />
       ))}
       {section.notes && (
-        <ul className="mt-1.5 list-disc space-y-1 pl-[18px] text-[13px] leading-relaxed text-[var(--muted)]">
+        <ul className="mt-1.5 list-disc space-y-1 py-2.5 pl-[18px] pr-20 text-[13px] leading-relaxed text-[var(--muted)]">
           {section.notes.map((n) => (
             <li key={n}>{n}</li>
           ))}

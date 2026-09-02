@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from 'framer-motion'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { DayView } from './components/DayView'
 import { InfoView } from './components/InfoView'
 import { RestTimer } from './components/RestTimer'
@@ -8,13 +8,26 @@ import { DAYS } from './data/program'
 import type { DayKey } from './types'
 
 const JS_DOW_TO_KEY: DayKey[] = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat']
-const TODAY_KEY: DayKey = JS_DOW_TO_KEY[new Date().getDay()]
+const getTodayKey = (): DayKey => JS_DOW_TO_KEY[new Date().getDay()]
 
 type ActiveKey = DayKey | 'info'
 
 function App() {
-  const [activeKey, setActiveKey] = useState<ActiveKey>(TODAY_KEY)
+  const [todayKey, setTodayKey] = useState<DayKey>(getTodayKey)
+  const [activeKey, setActiveKey] = useState<ActiveKey>(getTodayKey)
   const activeDay = DAYS.find((d) => d.key === activeKey)
+
+  useEffect(() => {
+    const sync = () => setTodayKey(getTodayKey())
+    document.addEventListener('visibilitychange', sync)
+    window.addEventListener('focus', sync)
+    const id = window.setInterval(sync, 60_000)
+    return () => {
+      document.removeEventListener('visibilitychange', sync)
+      window.removeEventListener('focus', sync)
+      window.clearInterval(id)
+    }
+  }, [])
 
   return (
     <div style={{ paddingBottom: 'calc(var(--tabbar-h) + 20px)' }}>
@@ -43,7 +56,7 @@ function App() {
       </main>
 
       <RestTimer />
-      <TabBar days={DAYS} activeKey={activeKey} todayKey={TODAY_KEY} onSelect={(k) => setActiveKey(k as ActiveKey)} />
+      <TabBar days={DAYS} activeKey={activeKey} todayKey={todayKey} onSelect={(k) => setActiveKey(k as ActiveKey)} />
     </div>
   )
 }
