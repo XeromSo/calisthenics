@@ -18,7 +18,7 @@ function App() {
 
   return (
     <div style={{ paddingBottom: 'calc(var(--tabbar-h) + 20px)' }}>
-      <header className="mx-auto max-w-[520px] px-3.5 pb-2.5 pt-[18px]">
+      <header className="mx-auto max-w-[520px] px-3.5 pb-2.5 pt-[calc(18px+env(safe-area-inset-top))]">
         <h1 className="text-[13px] font-bold uppercase tracking-[0.12em] text-[var(--muted)]">3-Day Calisthenics · Intermediate/Advanced</h1>
       </header>
 

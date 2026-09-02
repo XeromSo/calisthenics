@@ -35,7 +35,7 @@ export function TabBar({ days, activeKey, todayKey, onSelect }: TabBarProps) {
     <nav
       ref={ref}
       className="fixed inset-x-0 bottom-0 z-10 flex justify-between border-t border-[var(--border)] bg-[#0d1218]/90 backdrop-blur-md"
-      style={{ padding: '10px 6px calc(14px + env(safe-area-inset-bottom))' }}
+      style={{ padding: '10px 6px max(10px, env(safe-area-inset-bottom))' }}
     >
       {tabs.map((tab) => {
         const active = activeKey === tab.key
