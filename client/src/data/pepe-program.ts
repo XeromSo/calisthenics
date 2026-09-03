@@ -158,4 +158,4 @@ export const PEPE_PROGRESSION_RULE =
   "After about 4–6 weeks, once these movements feel comfortable, it'll be time to move on to Negative Pull-ups, full Push-ups, Dip progressions, and L-sit progressions."
 
 export const PEPE_CLOSING_QUOTE =
-  'فعلاً هدف این نیست که PePe حرکت‌های خفن Calisthenics بزنه 😄 هدف اینه که قدم‌به‌قدم و با کنترل، قوی‌تر بشه.'
+  "The goal isn't for PePe to pull off flashy Calisthenics moves right away 😄 The goal is to get stronger step by step, with control."
