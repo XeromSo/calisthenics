@@ -11,7 +11,7 @@ import { CLOSING_QUOTE, IMPORTANT_RULES, PROGRESSION_RULE, SINA_DAYS, SKILL_PROG
 export const PROFILES: Record<UserKey, Profile> = {
   sina: {
     key: 'sina',
-    name: 'Sinaa',
+    name: 'Sina',
     emoji: '🔥',
     tagline: '3-day intermediate/advanced program',
     accent: '#ff6a3d',
