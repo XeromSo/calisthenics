@@ -41,7 +41,6 @@ export const PROFILES: Record<UserKey, Profile> = {
       importantRules: PEPE_IMPORTANT_RULES,
       progressionRule: PEPE_PROGRESSION_RULE,
       closingQuote: PEPE_CLOSING_QUOTE,
-      closingQuoteDir: 'rtl',
     },
   },
 }
