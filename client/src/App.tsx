@@ -60,18 +60,6 @@ function App() {
     document.body.style.overflow = stage === 'app' ? '' : 'hidden'
   }, [stage])
 
-  // WebKit sometimes miscalculates the fixed-position viewport on cold launch when the
-  // page doesn't need scrolling (short day content), leaving the tab bar floating above
-  // the real bottom edge until a reflow occurs. A forced micro-scroll right after the app
-  // screen mounts nudges it to recompute correctly from the start.
-  useEffect(() => {
-    if (stage !== 'app') return
-    requestAnimationFrame(() => {
-      window.scrollTo(0, 1)
-      requestAnimationFrame(() => window.scrollTo(0, 0))
-    })
-  }, [stage])
-
   // Initial sync only — later transitions toggle this in onExitComplete below, timed to the
   // outgoing screen's exit animation so the tab bar never renders over the darkened body mid-fade.
   useEffect(() => {
