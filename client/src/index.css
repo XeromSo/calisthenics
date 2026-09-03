@@ -27,6 +27,7 @@ body {
   min-height: 100dvh;
   min-height: var(--app-height, 100dvh);
   background: radial-gradient(1200px 800px at 50% -10%, #16202b 0%, var(--bg) 55%);
+  background-attachment: fixed;
   color: var(--text);
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -37,15 +38,18 @@ body {
 
 body.pre-app {
   background: var(--bottom-fade), radial-gradient(1200px 800px at 50% -10%, #16202b 0%, var(--bg) 55%);
+  background-attachment: fixed;
 }
 
 body[data-profile='pepe'] {
   background: radial-gradient(1200px 800px at 50% -10%, #2b1622 0%, var(--bg) 55%);
+  background-attachment: fixed;
   --accent-shadow: rgba(236, 72, 153, 0.4);
 }
 
 body[data-profile='pepe'].pre-app {
   background: var(--bottom-fade), radial-gradient(1200px 800px at 50% -10%, #2b1622 0%, var(--bg) 55%);
+  background-attachment: fixed;
 }
 
 #root {
