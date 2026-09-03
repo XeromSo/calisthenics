@@ -60,6 +60,12 @@ function App() {
     document.body.style.overflow = stage === 'app' ? '' : 'hidden'
   }, [stage])
 
+  // Initial sync only — later transitions toggle this in onExitComplete below, timed to the
+  // outgoing screen's exit animation so the tab bar never renders over the darkened body mid-fade.
+  useEffect(() => {
+    document.body.classList.toggle('pre-app', stage !== 'app')
+  }, [])
+
   const selectProfile = (key: UserKey) => {
     store.set(PROFILE_STORE_KEY, key)
     setProfileKey(key)
@@ -118,7 +124,11 @@ function App() {
     )
   }
 
-  return <AnimatePresence mode="wait">{content}</AnimatePresence>
+  return (
+    <AnimatePresence mode="wait" onExitComplete={() => document.body.classList.toggle('pre-app', stage !== 'app')}>
+      {content}
+    </AnimatePresence>
+  )
 }
 
 export default App
