@@ -16,7 +16,7 @@ export function ProfileSelect({ onSelect }: ProfileSelectProps) {
       exit={{ opacity: 0 }}
       transition={{ duration: 0.25 }}
       className="fixed inset-0 z-10 flex flex-col justify-center gap-3 overflow-hidden px-5 py-6"
-      style={{ background: 'linear-gradient(to bottom, var(--bg) 0%, var(--bg) 55%, #000 100%)' }}
+      style={{ background: 'var(--bottom-fade), var(--bg)' }}
     >
       <div className="mx-auto w-full max-w-[420px]">
         <div className="mb-2 text-center">

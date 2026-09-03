@@ -17,7 +17,7 @@ export function SplashScreen({ onDone }: SplashScreenProps) {
       transition={{ duration: 0.35 }}
       onClick={onDone}
       className="fixed inset-0 z-10 flex flex-col items-center justify-center gap-3 px-6 text-center"
-      style={{ background: 'linear-gradient(to bottom, var(--bg) 0%, var(--bg) 55%, #000 100%)' }}
+      style={{ background: 'var(--bottom-fade), var(--bg)' }}
     >
       <motion.div
         initial={{ scale: 0.4, opacity: 0, rotate: -12 }}
