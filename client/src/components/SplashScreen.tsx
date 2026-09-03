@@ -16,7 +16,7 @@ export function SplashScreen({ onDone }: SplashScreenProps) {
       exit={{ opacity: 0, scale: 1.05 }}
       transition={{ duration: 0.35 }}
       onClick={onDone}
-      className="flex min-h-(--app-height,100dvh) flex-col items-center justify-center gap-3 px-6 text-center"
+      className="fixed inset-0 z-10 flex flex-col items-center justify-center gap-3 px-6 text-center"
     >
       <motion.div
         initial={{ scale: 0.4, opacity: 0, rotate: -12 }}
