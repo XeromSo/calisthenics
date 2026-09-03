@@ -15,7 +15,7 @@ export function ProfileSelect({ onSelect }: ProfileSelectProps) {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.25 }}
-      className="mx-auto flex min-h-[100dvh] max-w-[420px] flex-col justify-center gap-3 px-5"
+      className="mx-auto flex min-h-(--app-height,100dvh) max-w-[420px] flex-col justify-center gap-3 px-5"
     >
       <div className="mb-2 text-center">
         <div className="text-[13px] font-bold uppercase tracking-[0.12em] text-[var(--muted)]">Welcome</div>

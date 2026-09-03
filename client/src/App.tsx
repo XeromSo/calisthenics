@@ -38,6 +38,19 @@ function App() {
   }, [])
 
   useEffect(() => {
+    const setAppHeight = () => document.documentElement.style.setProperty('--app-height', `${window.innerHeight}px`)
+    setAppHeight()
+    window.addEventListener('resize', setAppHeight)
+    window.addEventListener('orientationchange', setAppHeight)
+    window.visualViewport?.addEventListener('resize', setAppHeight)
+    return () => {
+      window.removeEventListener('resize', setAppHeight)
+      window.removeEventListener('orientationchange', setAppHeight)
+      window.visualViewport?.removeEventListener('resize', setAppHeight)
+    }
+  }, [])
+
+  useEffect(() => {
     if (!profile) return
     document.documentElement.style.setProperty('--good', profile.good)
     document.body.dataset.profile = profile.key
