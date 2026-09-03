@@ -56,6 +56,10 @@ function App() {
     document.body.dataset.profile = profile.key
   }, [profile])
 
+  useEffect(() => {
+    document.body.style.overflow = stage === 'app' ? '' : 'hidden'
+  }, [stage])
+
   const selectProfile = (key: UserKey) => {
     store.set(PROFILE_STORE_KEY, key)
     setProfileKey(key)
